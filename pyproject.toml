@@ -1,0 +1,30 @@
+[project]
+name = "support-triage-agent"
+version = "0.1.0"
+description = "Example Co customer support agent — email triage + grounded reply drafting into Notion."
+requires-python = ">=3.10"
+dependencies = [
+    "anthropic>=0.40",
+    "requests>=2.31",
+    "python-dotenv>=1.0",
+]
+
+[project.optional-dependencies]
+dev = ["pytest>=8.0", "ruff==0.13.2"]
+
+[project.scripts]
+support-triage-agent = "support_triage_agent.pipeline:main"
+
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+# src layout: without this, plain `pytest` cannot import the package unless it
+# has been pip-installed first. Adding it here means the tests run from a fresh
+# clone with no install step.
+pythonpath = ["src"]
+testpaths = ["tests"]

@@ -1,0 +1,39 @@
+# support-triage-agent — Dokploy builds this from the source in the same repo.
+# Env vars come from Dokploy's Environment tab (written to .env beside this file).
+# Redeploy after code changes: push new code to Dokploy → Deploy (it rebuilds).
+services:
+  cs-agent:
+    build: .
+    container_name: cs-agent
+    restart: unless-stopped
+    env_file: .env
+    command: ["python", "-m", "support_triage_agent.gmail_fetch", "--loop", "--interval", "300", "--since-days", "2"]
+    labels:
+      - autoheal=true                # autoheal sidecar restarts this if unhealthy
+    volumes:
+      - cs-data:/app/data            # persists tickets.db (dedupe cache) across redeploys
+    # Liveness: the loop refreshes /app/data/heartbeat each cycle (every 300s).
+    # If a cycle hangs (blocked socket), the file goes stale and this check
+    # marks the container unhealthy. Plain compose does NOT auto-restart on
+    # unhealthy, so the autoheal sidecar below does it.
+    healthcheck:
+      test: ["CMD-SHELL", "test $(( $(date +%s) - $(cat /app/data/heartbeat 2>/dev/null || echo 0) )) -lt 700"]
+      interval: 120s
+      timeout: 10s
+      retries: 3
+      start_period: 180s
+    # Notion auto-write: add "--write" to the command once NOTION_TOKEN is set.
+
+  # Watches all containers labelled autoheal=true and restarts any that go
+  # unhealthy. Tiny, no config. This is what makes the healthcheck actionable.
+  autoheal:
+    image: willfarrell/autoheal:latest
+    container_name: cs-agent-autoheal
+    restart: unless-stopped
+    environment:
+      - AUTOHEAL_CONTAINER_LABEL=autoheal
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+
+volumes:
+  cs-data:
