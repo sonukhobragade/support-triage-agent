@@ -1,0 +1,32 @@
+# --- NEVER COMMIT: real customer correspondence ---
+data/*.db
+data/*.jsonl
+data/*.jsonl.gz
+data/*.mbox
+data/*.log
+data/mail_extract*
+data/tickets*
+!data/reply_library.json
+!data/sop_playbook.md
+
+# Built by scripts/fetch_public_replies.py from a CDLA-Sharing-1.0 dataset.
+# Not committed: republishing a derivative of that data would mean licensing it
+# under CDLA-Sharing-1.0, and this repository is MIT. Fetch it yourself.
+data/reply_library.public.json
+
+.env
+.venv/
+venv/
+__pycache__/
+*.pyc
+*.egg-info/
+.pytest_cache/
+.DS_Store
+
+# harness template state
+.template.env
+.template.modules
+.claude/logs/
+
+# Local Claude Code MCP server config; may contain API tokens
+.mcp.json

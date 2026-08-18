@@ -1,0 +1,19 @@
+{
+  "version": 2,
+  "generated_at": "2026-01-01T00:00:00Z",
+  "note": "Synthetic example library. Rebuild from your own resolved tickets with build_reply_library.",
+  "categories": {
+    "Refunds": [
+      "Thanks for flagging this. I can see the payment against your account. Refunds settle back to the original method within 5-7 working days. If it has been longer, reply with the transaction reference and I will raise it with the payments team."
+    ],
+    "Account deletion / data removal": [
+      "I have logged your deletion request. Your account will be closed and associated data removed within 30 days. You will get a confirmation once it completes. If you have an active subscription it will be cancelled as part of this."
+    ],
+    "Billing": [
+      "Sorry about that. A duplicate charge is usually a failed retry that settled twice. Send me the two transaction references and I will get the duplicate reversed."
+    ],
+    "Delivery": [
+      "Thanks for your patience. I can see the order against your account. Reports generate within 24 hours; if yours has not arrived I will regenerate it now and confirm here once it is sent."
+    ]
+  }
+}

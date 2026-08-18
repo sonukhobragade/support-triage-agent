@@ -1,0 +1,30 @@
+name: Feature request
+description: Suggest a change or addition
+labels: [enhancement]
+body:
+  - type: textarea
+    id: problem
+    attributes:
+      label: What problem are you hitting
+      description: Describe the situation, not the solution. What did you try to do?
+    validations:
+      required: true
+  - type: textarea
+    id: proposal
+    attributes:
+      label: What you would like it to do
+    validations:
+      required: true
+  - type: textarea
+    id: alternatives
+    attributes:
+      label: What you tried or considered instead
+    validations:
+      required: false
+  - type: markdown
+    attributes:
+      value: |
+        This project deliberately does not do some things. Before proposing one,
+        check the limitations section of the README. Those are design decisions
+        with reasons behind them, and a proposal to change one is welcome, but
+        it should engage with the reason.

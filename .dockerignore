@@ -1,0 +1,19 @@
+# Never bake secrets or local junk into the image.
+.env
+.env.*
+.venv/
+venv/
+__pycache__/
+*.pyc
+.git/
+.gitignore
+.pytest_cache/
+tests/
+docs/
+*.md
+!data/sop_playbook.md
+# Runtime data — provided via volume, not the image (PII + the DB stay out).
+data/*.db
+data/*.jsonl.gz
+data/*.log
+data/reply_library.json
