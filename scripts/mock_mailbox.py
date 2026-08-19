@@ -132,7 +132,7 @@ MESSAGES: list[tuple[str, str, str, str, str, dict, str, str]] = [
         "not resolved this week.",
     ),
     (
-        "Gita Sharma <gita.sharma@example.net>", SUPPORT,
+        "Gil Marek <gil.marek@example.net>", SUPPORT,
         "Mon, 12 Jan 2026 10:00:00 +0000",
         "Raising a chargeback with my bank",
         "<charge1@example.net>", {}, "text/plain",

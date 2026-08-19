@@ -157,7 +157,7 @@ except the wording still happens.
   Dana Iqbal <<email>>                   Booking page will not load
   Eli Novak <<email>>                    Wrong provider joined my session and I want
   Farah Massi <<email>>                  Speaking to my solicitor about this
-  Gita Sharma <<email>>                  Raising a chargeback with my bank
+  Gil Marek <<email>>                    Raising a chargeback with my bank
   Hana Petrov <<email>>                  I feel awful about all of this
   Ben Ortiz <<email>>                    Refund for duplicate charge
 
