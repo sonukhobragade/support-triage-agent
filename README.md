@@ -12,6 +12,31 @@ Nothing goes to a customer automatically. That is the design, not a limitation.
 Worked examples of what it drafts, and what a reviewer would send instead, are
 in [`docs/BEFORE_AFTER.md`](docs/BEFORE_AFTER.md).
 
+## What a run shows
+
+`python scripts/demo.py` on the bundled mock inbox, no credentials required:
+
+```
+14 messages -> 9 conversations          bulk, bounces and non-support dropped
+
+--- triage + guardrails --------------------------------------------
+  Speaking to my solicitor about this     human=True  draft=withheld
+  Raising a chargeback with my bank       human=True  draft=withheld
+  I feel awful about all of this          human=True  draft=withheld
+
+--- the cache ------------------------------------------------------
+  first pass:  15 model calls
+  second pass:  0 model calls, 9 cache hits
+
+31 of 31 checks passed
+```
+
+Three things that run is proving: legal, chargeback and self-harm messages are
+routed to a human with **no draft attached**, a repeat pass costs **nothing**,
+and grouping is by conversation rather than by message.
+
+Retrieval is BM25, not embeddings — a deliberate choice explained below.
+
 ## Why retrieval and not just a prompt
 
 An LLM asked to "write a support reply" invents policy. It will confidently
@@ -183,7 +208,7 @@ except the wording still happens.
 --- the cache -----------------------------------------------------
   first pass: 15 model calls. second pass: 0 model calls, 9 cache hits.
 
-30 of 30 checks passed
+31 of 31 checks passed
 ```
 
 **Every message above is invented.** The addresses are RFC 2606 reserved
