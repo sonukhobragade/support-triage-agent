@@ -74,12 +74,15 @@ def _openai_complete(model: str, system: str, user: str, max_tokens: int) -> str
     data = resp.json()
     usage = data.get("usage") or {}
     cache_stats["uncached"] += usage.get("prompt_tokens", 0) or 0
+    cache_stats["output"] += usage.get("completion_tokens", 0) or 0
     return data["choices"][0]["message"]["content"] or ""
 
 
 # Aggregate cache-token usage across a run, so the pipeline can report whether
 # the SOP-playbook prefix is actually being cached. Reset per process.
-cache_stats = {"read": 0, "write": 0, "uncached": 0}
+# "output" is here rather than in a separate counter because cost is the sum of
+# all four and splitting them across two dicts invites reporting three of them.
+cache_stats = {"read": 0, "write": 0, "uncached": 0, "output": 0}
 
 
 def complete(model: str, system: str, user: str, max_tokens: int = 1024) -> str:
@@ -112,6 +115,7 @@ def complete(model: str, system: str, user: str, max_tokens: int = 1024) -> str:
     cache_stats["read"] += getattr(u, "cache_read_input_tokens", 0) or 0
     cache_stats["write"] += getattr(u, "cache_creation_input_tokens", 0) or 0
     cache_stats["uncached"] += getattr(u, "input_tokens", 0) or 0
+    cache_stats["output"] += getattr(u, "output_tokens", 0) or 0
     return "".join(b.text for b in resp.content if getattr(b, "type", None) == "text")
 
 
