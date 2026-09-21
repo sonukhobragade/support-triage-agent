@@ -32,6 +32,25 @@ def _get_client():
     return _client
 
 
+# Models that still accept sampling controls. Anthropic removed temperature,
+# top_p and top_k from the Messages API on Claude 4.6 and later: sending
+# temperature to Sonnet 5 or Opus 4.6+ is a 400, not a no-op. So the parameter
+# is sent where it works and omitted where it does not, rather than pinning the
+# classifier to one model generation.
+_SAMPLING_MODELS = (
+    "claude-haiku-4-5",
+    "claude-sonnet-4-5",
+    "claude-opus-4-5",
+    "claude-opus-4-1",
+    "claude-3",
+)
+
+
+def supports_temperature(model: str) -> bool:
+    """True when this model still accepts a temperature parameter."""
+    return model.startswith(_SAMPLING_MODELS)
+
+
 def mode() -> str:
     """Which backend a call would use: "anthropic", "openai" or "mock"."""
     if config.LLM_TRANSPORT == "openai":
@@ -74,12 +93,15 @@ def _openai_complete(model: str, system: str, user: str, max_tokens: int) -> str
     data = resp.json()
     usage = data.get("usage") or {}
     cache_stats["uncached"] += usage.get("prompt_tokens", 0) or 0
+    cache_stats["output"] += usage.get("completion_tokens", 0) or 0
     return data["choices"][0]["message"]["content"] or ""
 
 
 # Aggregate cache-token usage across a run, so the pipeline can report whether
 # the SOP-playbook prefix is actually being cached. Reset per process.
-cache_stats = {"read": 0, "write": 0, "uncached": 0}
+# "output" is here rather than in a separate counter because cost is the sum of
+# all four and splitting them across two dicts invites reporting three of them.
+cache_stats = {"read": 0, "write": 0, "uncached": 0, "output": 0}
 
 
 def complete(model: str, system: str, user: str, max_tokens: int = 1024) -> str:
@@ -98,6 +120,16 @@ def complete(model: str, system: str, user: str, max_tokens: int = 1024) -> str:
         return _mock(system, user)
     if backend == "openai":
         return _openai_complete(model, system, user, max_tokens)
+    # Without this the call samples at the model's default, and the same email
+    # classified twice can land in two different categories: 11 of 180 fields
+    # changed between two identical eval runs before it was set. The OpenAI
+    # path has pinned temperature 0 since it was written; this one had not.
+    # Sent through extra_body because the SDK removed temperature from
+    # messages.create's signature (it is gone from the API on 4.6+ models), but
+    # the models below still honour it on the wire.
+    extra = (
+        {"extra_body": {"temperature": 0}} if supports_temperature(model) else {}
+    )
     resp = _get_client().messages.create(
         model=model,
         max_tokens=max_tokens,
@@ -107,11 +139,13 @@ def complete(model: str, system: str, user: str, max_tokens: int = 1024) -> str:
             "cache_control": {"type": "ephemeral"},
         }],
         messages=[{"role": "user", "content": user}],
+        **extra,
     )
     u = resp.usage
     cache_stats["read"] += getattr(u, "cache_read_input_tokens", 0) or 0
     cache_stats["write"] += getattr(u, "cache_creation_input_tokens", 0) or 0
     cache_stats["uncached"] += getattr(u, "input_tokens", 0) or 0
+    cache_stats["output"] += getattr(u, "output_tokens", 0) or 0
     return "".join(b.text for b in resp.content if getattr(b, "type", None) == "text")
 
 

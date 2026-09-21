@@ -1,0 +1,1048 @@
+{
+  "model": "claude-haiku-4-5-20251001",
+  "n": 60,
+  "accuracy": {
+    "category": 0.8166666666666667,
+    "sop_id": 0.8666666666666667,
+    "priority_exact": 0.65,
+    "priority_within_one": 0.95,
+    "all_three": 0.48333333333333334
+  },
+  "tokens": {
+    "read": 0,
+    "write": 0,
+    "uncached": 39804,
+    "output": 4946
+  },
+  "cost_usd": {
+    "total": 0.064534,
+    "per_email": 0.0010755666666666666
+  },
+  "latency_s": {
+    "p50": 1.068,
+    "p95": 1.72,
+    "wall": 67.16096615791321
+  },
+  "results": [
+    {
+      "id": "E01",
+      "subject": "Paid 499 but no credits showing",
+      "latency_s": 1.72,
+      "category": {
+        "want": "Payment",
+        "got": "Payment"
+      },
+      "sop_id": {
+        "want": "NO_SOP",
+        "got": "A2"
+      },
+      "priority": {
+        "want": "High",
+        "got": "High"
+      }
+    },
+    {
+      "id": "E02",
+      "subject": "Refund for duplicate charge",
+      "latency_s": 1.017,
+      "category": {
+        "want": "Return/Refund",
+        "got": "Payment"
+      },
+      "sop_id": {
+        "want": "A2",
+        "got": "A2"
+      },
+      "priority": {
+        "want": "High",
+        "got": "High"
+      }
+    },
+    {
+      "id": "E03",
+      "subject": "Where is my refund",
+      "latency_s": 1.114,
+      "category": {
+        "want": "Return/Refund",
+        "got": "Return/Refund"
+      },
+      "sop_id": {
+        "want": "A1",
+        "got": "A1"
+      },
+      "priority": {
+        "want": "High",
+        "got": "High"
+      }
+    },
+    {
+      "id": "E04",
+      "subject": "App closes when I open a chat",
+      "latency_s": 1.272,
+      "category": {
+        "want": "Generic Technical Problem",
+        "got": "Provider chat problem"
+      },
+      "sop_id": {
+        "want": "NO_SOP",
+        "got": "NO_SOP"
+      },
+      "priority": {
+        "want": "Medium",
+        "got": "Medium"
+      }
+    },
+    {
+      "id": "E05",
+      "subject": "Delete my account and all my data",
+      "latency_s": 1.013,
+      "category": {
+        "want": "Generic Technical Problem",
+        "got": "Return/Refund"
+      },
+      "sop_id": {
+        "want": "B1",
+        "got": "B1"
+      },
+      "priority": {
+        "want": "High",
+        "got": "High"
+      }
+    },
+    {
+      "id": "E06",
+      "subject": "Consultant was rude to me",
+      "latency_s": 1.068,
+      "category": {
+        "want": "Provider chat problem",
+        "got": "Provider chat problem"
+      },
+      "sop_id": {
+        "want": "NO_SOP",
+        "got": "NO_SOP"
+      },
+      "priority": {
+        "want": "Medium",
+        "got": "Medium"
+      }
+    },
+    {
+      "id": "E07",
+      "subject": "Report never arrived",
+      "latency_s": 1.048,
+      "category": {
+        "want": "Generic Technical Problem",
+        "got": "Generic Technical Problem"
+      },
+      "sop_id": {
+        "want": "C1",
+        "got": "C1"
+      },
+      "priority": {
+        "want": "Medium",
+        "got": "Medium"
+      }
+    },
+    {
+      "id": "E08",
+      "subject": "Chargeback filed with my bank",
+      "latency_s": 1.156,
+      "category": {
+        "want": "Payment",
+        "got": "Payment"
+      },
+      "sop_id": {
+        "want": "H1",
+        "got": "H1"
+      },
+      "priority": {
+        "want": "Urgent",
+        "got": "Critical"
+      }
+    },
+    {
+      "id": "E09",
+      "subject": "Money debited, order failed",
+      "latency_s": 1.163,
+      "category": {
+        "want": "Payment",
+        "got": "Payment"
+      },
+      "sop_id": {
+        "want": "NO_SOP",
+        "got": "A2"
+      },
+      "priority": {
+        "want": "High",
+        "got": "High"
+      }
+    },
+    {
+      "id": "E10",
+      "subject": "Cannot log in, OTP never arrives",
+      "latency_s": 1.074,
+      "category": {
+        "want": "Generic Technical Problem",
+        "got": "Generic Technical Problem"
+      },
+      "sop_id": {
+        "want": "NO_SOP",
+        "got": "NO_SOP"
+      },
+      "priority": {
+        "want": "Medium",
+        "got": "High"
+      }
+    },
+    {
+      "id": "E11",
+      "subject": "Charged after I cancelled",
+      "latency_s": 0.886,
+      "category": {
+        "want": "Payment",
+        "got": "Payment"
+      },
+      "sop_id": {
+        "want": "A2",
+        "got": "A2"
+      },
+      "priority": {
+        "want": "High",
+        "got": "High"
+      }
+    },
+    {
+      "id": "E12",
+      "subject": "Please send me a GST invoice",
+      "latency_s": 1.032,
+      "category": {
+        "want": "Payment",
+        "got": "Payment"
+      },
+      "sop_id": {
+        "want": "NO_SOP",
+        "got": "NO_SOP"
+      },
+      "priority": {
+        "want": "Low",
+        "got": "Low"
+      }
+    },
+    {
+      "id": "E13",
+      "subject": "Consultant never joined the chat",
+      "latency_s": 1.068,
+      "category": {
+        "want": "Provider chat problem",
+        "got": "Provider chat problem"
+      },
+      "sop_id": {
+        "want": "NO_SOP",
+        "got": "NO_SOP"
+      },
+      "priority": {
+        "want": "High",
+        "got": "High"
+      }
+    },
+    {
+      "id": "E14",
+      "subject": "I want my money back",
+      "latency_s": 1.338,
+      "category": {
+        "want": "Return/Refund",
+        "got": "Return/Refund"
+      },
+      "sop_id": {
+        "want": "A1",
+        "got": "A1"
+      },
+      "priority": {
+        "want": "Medium",
+        "got": "Medium"
+      }
+    },
+    {
+      "id": "E15",
+      "subject": "Chat keeps disconnecting mid-session",
+      "latency_s": 0.976,
+      "category": {
+        "want": "Provider chat problem",
+        "got": "Provider chat problem"
+      },
+      "sop_id": {
+        "want": "NO_SOP",
+        "got": "NO_SOP"
+      },
+      "priority": {
+        "want": "Medium",
+        "got": "Medium"
+      }
+    },
+    {
+      "id": "E16",
+      "subject": "Wrong amount charged",
+      "latency_s": 1.178,
+      "category": {
+        "want": "Payment",
+        "got": "Payment"
+      },
+      "sop_id": {
+        "want": "A2",
+        "got": "A2"
+      },
+      "priority": {
+        "want": "High",
+        "got": "High"
+      }
+    },
+    {
+      "id": "E17",
+      "subject": "Report is for the wrong person",
+      "latency_s": 1.014,
+      "category": {
+        "want": "Generic Technical Problem",
+        "got": "Generic Technical Problem"
+      },
+      "sop_id": {
+        "want": "C1",
+        "got": "NO_SOP"
+      },
+      "priority": {
+        "want": "High",
+        "got": "High"
+      }
+    },
+    {
+      "id": "E18",
+      "subject": "Notifications stopped working",
+      "latency_s": 1.075,
+      "category": {
+        "want": "Generic Technical Problem",
+        "got": "Generic Technical Problem"
+      },
+      "sop_id": {
+        "want": "NO_SOP",
+        "got": "NO_SOP"
+      },
+      "priority": {
+        "want": "Low",
+        "got": "Medium"
+      }
+    },
+    {
+      "id": "E19",
+      "subject": "Consultant asked me to pay outside the app",
+      "latency_s": 1.203,
+      "category": {
+        "want": "Provider chat problem",
+        "got": "Generic Technical Problem"
+      },
+      "sop_id": {
+        "want": "H1",
+        "got": "NO_SOP"
+      },
+      "priority": {
+        "want": "Urgent",
+        "got": "High"
+      }
+    },
+    {
+      "id": "E20",
+      "subject": "Refund approved but wrong account",
+      "latency_s": 1.038,
+      "category": {
+        "want": "Return/Refund",
+        "got": "Return/Refund"
+      },
+      "sop_id": {
+        "want": "A1",
+        "got": "A1"
+      },
+      "priority": {
+        "want": "High",
+        "got": "High"
+      }
+    },
+    {
+      "id": "E21",
+      "subject": "Cannot change my registered email",
+      "latency_s": 1.101,
+      "category": {
+        "want": "Generic Technical Problem",
+        "got": "Generic Technical Problem"
+      },
+      "sop_id": {
+        "want": "NO_SOP",
+        "got": "NO_SOP"
+      },
+      "priority": {
+        "want": "Low",
+        "got": "Medium"
+      }
+    },
+    {
+      "id": "E22",
+      "subject": "Credits vanished from my account",
+      "latency_s": 1.149,
+      "category": {
+        "want": "Payment",
+        "got": "Payment"
+      },
+      "sop_id": {
+        "want": "NO_SOP",
+        "got": "NO_SOP"
+      },
+      "priority": {
+        "want": "High",
+        "got": "High"
+      }
+    },
+    {
+      "id": "E23",
+      "subject": "Consultant gave me completely wrong information",
+      "latency_s": 2.023,
+      "category": {
+        "want": "Provider chat problem",
+        "got": "Provider chat problem"
+      },
+      "sop_id": {
+        "want": "NO_SOP",
+        "got": "NO_SOP"
+      },
+      "priority": {
+        "want": "Medium",
+        "got": "Medium"
+      }
+    },
+    {
+      "id": "E24",
+      "subject": "Remove my data under GDPR",
+      "latency_s": 1.094,
+      "category": {
+        "want": "Generic Technical Problem",
+        "got": "Return/Refund"
+      },
+      "sop_id": {
+        "want": "B1",
+        "got": "B1"
+      },
+      "priority": {
+        "want": "High",
+        "got": "Critical"
+      }
+    },
+    {
+      "id": "E25",
+      "subject": "Payment stuck on processing for 3 days",
+      "latency_s": 1.124,
+      "category": {
+        "want": "Payment",
+        "got": "Payment"
+      },
+      "sop_id": {
+        "want": "NO_SOP",
+        "got": "A2"
+      },
+      "priority": {
+        "want": "High",
+        "got": "High"
+      }
+    },
+    {
+      "id": "E26",
+      "subject": "Cancel my subscription and refund this month",
+      "latency_s": 1.912,
+      "category": {
+        "want": "Return/Refund",
+        "got": "Return/Refund"
+      },
+      "sop_id": {
+        "want": "A1",
+        "got": "A1"
+      },
+      "priority": {
+        "want": "Medium",
+        "got": "Medium"
+      }
+    },
+    {
+      "id": "E27",
+      "subject": "Two consultants gave opposite answers",
+      "latency_s": 1.068,
+      "category": {
+        "want": "Provider chat problem",
+        "got": "Provider chat problem"
+      },
+      "sop_id": {
+        "want": "NO_SOP",
+        "got": "NO_SOP"
+      },
+      "priority": {
+        "want": "Low",
+        "got": "Medium"
+      }
+    },
+    {
+      "id": "E28",
+      "subject": "App will not install on my phone",
+      "latency_s": 1.006,
+      "category": {
+        "want": "Generic Technical Problem",
+        "got": "Generic Technical Problem"
+      },
+      "sop_id": {
+        "want": "NO_SOP",
+        "got": "NO_SOP"
+      },
+      "priority": {
+        "want": "Low",
+        "got": "Medium"
+      }
+    },
+    {
+      "id": "E29",
+      "subject": "I will report you to the consumer forum",
+      "latency_s": 1.06,
+      "category": {
+        "want": "Return/Refund",
+        "got": "Payment"
+      },
+      "sop_id": {
+        "want": "H1",
+        "got": "H1"
+      },
+      "priority": {
+        "want": "Urgent",
+        "got": "Critical"
+      }
+    },
+    {
+      "id": "E30",
+      "subject": "Report download link expired",
+      "latency_s": 0.993,
+      "category": {
+        "want": "Generic Technical Problem",
+        "got": "Generic Technical Problem"
+      },
+      "sop_id": {
+        "want": "C1",
+        "got": "C1"
+      },
+      "priority": {
+        "want": "Medium",
+        "got": "Low"
+      }
+    },
+    {
+      "id": "E31",
+      "subject": "Card declined but you took the money",
+      "latency_s": 1.057,
+      "category": {
+        "want": "Payment",
+        "got": "Payment"
+      },
+      "sop_id": {
+        "want": "NO_SOP",
+        "got": "A2"
+      },
+      "priority": {
+        "want": "High",
+        "got": "High"
+      }
+    },
+    {
+      "id": "E32",
+      "subject": "Consultant was an hour late",
+      "latency_s": 1.046,
+      "category": {
+        "want": "Provider chat problem",
+        "got": "Provider chat problem"
+      },
+      "sop_id": {
+        "want": "NO_SOP",
+        "got": "NO_SOP"
+      },
+      "priority": {
+        "want": "Medium",
+        "got": "Medium"
+      }
+    },
+    {
+      "id": "E33",
+      "subject": "Refund status please",
+      "latency_s": 1.018,
+      "category": {
+        "want": "Return/Refund",
+        "got": "Return/Refund"
+      },
+      "sop_id": {
+        "want": "A1",
+        "got": "A1"
+      },
+      "priority": {
+        "want": "Low",
+        "got": "Medium"
+      }
+    },
+    {
+      "id": "E34",
+      "subject": "Chat history is gone",
+      "latency_s": 1.026,
+      "category": {
+        "want": "Generic Technical Problem",
+        "got": "Generic Technical Problem"
+      },
+      "sop_id": {
+        "want": "NO_SOP",
+        "got": "NO_SOP"
+      },
+      "priority": {
+        "want": "Medium",
+        "got": "Medium"
+      }
+    },
+    {
+      "id": "E35",
+      "subject": "Charged in the wrong currency",
+      "latency_s": 1.096,
+      "category": {
+        "want": "Payment",
+        "got": "Payment"
+      },
+      "sop_id": {
+        "want": "A2",
+        "got": "A2"
+      },
+      "priority": {
+        "want": "Medium",
+        "got": "High"
+      }
+    },
+    {
+      "id": "E36",
+      "subject": "Consultant does not speak my language",
+      "latency_s": 1.132,
+      "category": {
+        "want": "Provider chat problem",
+        "got": "Provider chat problem"
+      },
+      "sop_id": {
+        "want": "NO_SOP",
+        "got": "NO_SOP"
+      },
+      "priority": {
+        "want": "Medium",
+        "got": "Medium"
+      }
+    },
+    {
+      "id": "E37",
+      "subject": "Please delete my account, I am done",
+      "latency_s": 0.905,
+      "category": {
+        "want": "Generic Technical Problem",
+        "got": "Return/Refund"
+      },
+      "sop_id": {
+        "want": "B1",
+        "got": "B1"
+      },
+      "priority": {
+        "want": "Medium",
+        "got": "High"
+      }
+    },
+    {
+      "id": "E38",
+      "subject": "Paid for 3 reports, received 1",
+      "latency_s": 0.908,
+      "category": {
+        "want": "Generic Technical Problem",
+        "got": "Payment"
+      },
+      "sop_id": {
+        "want": "C1",
+        "got": "A2"
+      },
+      "priority": {
+        "want": "High",
+        "got": "High"
+      }
+    },
+    {
+      "id": "E39",
+      "subject": "Your app charged my card without asking",
+      "latency_s": 0.896,
+      "category": {
+        "want": "Payment",
+        "got": "Payment"
+      },
+      "sop_id": {
+        "want": "A2",
+        "got": "A2"
+      },
+      "priority": {
+        "want": "Urgent",
+        "got": "High"
+      }
+    },
+    {
+      "id": "E40",
+      "subject": "Session ended after 2 minutes",
+      "latency_s": 1.061,
+      "category": {
+        "want": "Provider chat problem",
+        "got": "Provider chat problem"
+      },
+      "sop_id": {
+        "want": "NO_SOP",
+        "got": "NO_SOP"
+      },
+      "priority": {
+        "want": "High",
+        "got": "High"
+      }
+    },
+    {
+      "id": "E41",
+      "subject": "Cannot upload my birth details",
+      "latency_s": 0.98,
+      "category": {
+        "want": "Generic Technical Problem",
+        "got": "Generic Technical Problem"
+      },
+      "sop_id": {
+        "want": "NO_SOP",
+        "got": "NO_SOP"
+      },
+      "priority": {
+        "want": "Low",
+        "got": "Medium"
+      }
+    },
+    {
+      "id": "E42",
+      "subject": "Refund promised 20 days ago",
+      "latency_s": 1.144,
+      "category": {
+        "want": "Return/Refund",
+        "got": "Return/Refund"
+      },
+      "sop_id": {
+        "want": "A1",
+        "got": "A1"
+      },
+      "priority": {
+        "want": "Urgent",
+        "got": "High"
+      }
+    },
+    {
+      "id": "E43",
+      "subject": "Someone else is using my account",
+      "latency_s": 1.133,
+      "category": {
+        "want": "Generic Technical Problem",
+        "got": "Generic Technical Problem"
+      },
+      "sop_id": {
+        "want": "NO_SOP",
+        "got": "NO_SOP"
+      },
+      "priority": {
+        "want": "Critical",
+        "got": "High"
+      }
+    },
+    {
+      "id": "E44",
+      "subject": "Consultant shared my details with someone",
+      "latency_s": 1.109,
+      "category": {
+        "want": "Provider chat problem",
+        "got": "Generic Technical Problem"
+      },
+      "sop_id": {
+        "want": "H1",
+        "got": "NO_SOP"
+      },
+      "priority": {
+        "want": "Critical",
+        "got": "High"
+      }
+    },
+    {
+      "id": "E45",
+      "subject": "Double payment for one session",
+      "latency_s": 1.086,
+      "category": {
+        "want": "Payment",
+        "got": "Payment"
+      },
+      "sop_id": {
+        "want": "A2",
+        "got": "A2"
+      },
+      "priority": {
+        "want": "High",
+        "got": "High"
+      }
+    },
+    {
+      "id": "E46",
+      "subject": "Report has empty sections",
+      "latency_s": 1.027,
+      "category": {
+        "want": "Generic Technical Problem",
+        "got": "Generic Technical Problem"
+      },
+      "sop_id": {
+        "want": "C1",
+        "got": "C1"
+      },
+      "priority": {
+        "want": "Medium",
+        "got": "Medium"
+      }
+    },
+    {
+      "id": "E47",
+      "subject": "I want to speak to a manager",
+      "latency_s": 1.106,
+      "category": {
+        "want": "Generic Technical Problem",
+        "got": "Generic Technical Problem"
+      },
+      "sop_id": {
+        "want": "NO_SOP",
+        "got": "NO_SOP"
+      },
+      "priority": {
+        "want": "High",
+        "got": "High"
+      }
+    },
+    {
+      "id": "E48",
+      "subject": "Promo code did not apply",
+      "latency_s": 1.132,
+      "category": {
+        "want": "Payment",
+        "got": "Payment"
+      },
+      "sop_id": {
+        "want": "A2",
+        "got": "A2"
+      },
+      "priority": {
+        "want": "Medium",
+        "got": "Medium"
+      }
+    },
+    {
+      "id": "E49",
+      "subject": "Consultant blocked me mid-conversation",
+      "latency_s": 1.101,
+      "category": {
+        "want": "Provider chat problem",
+        "got": "Provider chat problem"
+      },
+      "sop_id": {
+        "want": "NO_SOP",
+        "got": "NO_SOP"
+      },
+      "priority": {
+        "want": "Medium",
+        "got": "Medium"
+      }
+    },
+    {
+      "id": "E50",
+      "subject": "Refund to a closed bank account",
+      "latency_s": 1.045,
+      "category": {
+        "want": "Return/Refund",
+        "got": "Return/Refund"
+      },
+      "sop_id": {
+        "want": "A1",
+        "got": "A1"
+      },
+      "priority": {
+        "want": "High",
+        "got": "High"
+      }
+    },
+    {
+      "id": "E51",
+      "subject": "App shows me in the wrong time zone",
+      "latency_s": 0.962,
+      "category": {
+        "want": "Generic Technical Problem",
+        "got": "Generic Technical Problem"
+      },
+      "sop_id": {
+        "want": "NO_SOP",
+        "got": "NO_SOP"
+      },
+      "priority": {
+        "want": "Medium",
+        "got": "Medium"
+      }
+    },
+    {
+      "id": "E52",
+      "subject": "Subscription renewed without warning",
+      "latency_s": 1.102,
+      "category": {
+        "want": "Return/Refund",
+        "got": "Return/Refund"
+      },
+      "sop_id": {
+        "want": "A1",
+        "got": "A1"
+      },
+      "priority": {
+        "want": "High",
+        "got": "Medium"
+      }
+    },
+    {
+      "id": "E53",
+      "subject": "Payment page will not load",
+      "latency_s": 1.862,
+      "category": {
+        "want": "Generic Technical Problem",
+        "got": "Generic Technical Problem"
+      },
+      "sop_id": {
+        "want": "NO_SOP",
+        "got": "NO_SOP"
+      },
+      "priority": {
+        "want": "Medium",
+        "got": "Medium"
+      }
+    },
+    {
+      "id": "E54",
+      "subject": "I am being harassed by a consultant",
+      "latency_s": 1.112,
+      "category": {
+        "want": "Provider chat problem",
+        "got": "Provider chat problem"
+      },
+      "sop_id": {
+        "want": "H1",
+        "got": "H1"
+      },
+      "priority": {
+        "want": "Urgent",
+        "got": "Urgent"
+      }
+    },
+    {
+      "id": "E55",
+      "subject": "Credits expired without notice",
+      "latency_s": 1.058,
+      "category": {
+        "want": "Payment",
+        "got": "Generic Technical Problem"
+      },
+      "sop_id": {
+        "want": "NO_SOP",
+        "got": "NO_SOP"
+      },
+      "priority": {
+        "want": "Medium",
+        "got": "Medium"
+      }
+    },
+    {
+      "id": "E56",
+      "subject": "Cannot cancel my plan anywhere in the app",
+      "latency_s": 1.048,
+      "category": {
+        "want": "Payment",
+        "got": "Generic Technical Problem"
+      },
+      "sop_id": {
+        "want": "NO_SOP",
+        "got": "NO_SOP"
+      },
+      "priority": {
+        "want": "Medium",
+        "got": "High"
+      }
+    },
+    {
+      "id": "E57",
+      "subject": "Wrong report type delivered",
+      "latency_s": 1.051,
+      "category": {
+        "want": "Generic Technical Problem",
+        "got": "Generic Technical Problem"
+      },
+      "sop_id": {
+        "want": "C1",
+        "got": "C1"
+      },
+      "priority": {
+        "want": "Medium",
+        "got": "Medium"
+      }
+    },
+    {
+      "id": "E58",
+      "subject": "Thank you, but one small issue",
+      "latency_s": 0.884,
+      "category": {
+        "want": "Generic Technical Problem",
+        "got": "Generic Technical Problem"
+      },
+      "sop_id": {
+        "want": "C1",
+        "got": "C1"
+      },
+      "priority": {
+        "want": "Low",
+        "got": "Medium"
+      }
+    },
+    {
+      "id": "E59",
+      "subject": "Refund or I go to my bank",
+      "latency_s": 1.118,
+      "category": {
+        "want": "Return/Refund",
+        "got": "Return/Refund"
+      },
+      "sop_id": {
+        "want": "A1",
+        "got": "A1"
+      },
+      "priority": {
+        "want": "Urgent",
+        "got": "Urgent"
+      }
+    },
+    {
+      "id": "E60",
+      "subject": "Everything is broken",
+      "latency_s": 0.972,
+      "category": {
+        "want": "Generic Technical Problem",
+        "got": "Generic Technical Problem"
+      },
+      "sop_id": {
+        "want": "NO_SOP",
+        "got": "NO_SOP"
+      },
+      "priority": {
+        "want": "Medium",
+        "got": "Medium"
+      }
+    }
+  ]
+}
