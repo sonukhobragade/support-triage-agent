@@ -9,6 +9,7 @@ data/tickets*
 # The one .jsonl that is safe to publish: invented emails on reserved example
 # domains, written to be the answer key. Nothing here came from an inbox.
 !data/eval_set.jsonl
+!data/h1_set.jsonl
 !data/reply_library.json
 !data/sop_playbook.md
 

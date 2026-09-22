@@ -30,5 +30,28 @@ Confirm the order exists, then regenerate rather than asking the customer to
 retry. Only escalate if regeneration fails twice.
 
 ## H1 — Needs human
-Anything mentioning legal action, a regulator, a chargeback, self-harm, or a
-named employee. Draft nothing; route to a person.
+Route here on what the customer is reporting, not on the words they use. Most
+people describe what happened to them and never reach for the term for it:
+"he keeps messaging me after I ended the chat" is the same report as
+"harassment", and the person who does not know the word is usually the one in
+more trouble. Measured on data/h1_set.jsonl, the earlier keyword-shaped version
+of this entry caught 90% of the mails that named the thing and 50% of the mails
+that only described it.
+
+Draft nothing; route to a person, whenever the mail reports any of:
+- a person's safety, including distress, threats, stalking, a demand for money
+  over something private, or a minor involved in an adult interaction
+- a specific person's conduct, whether or not they are named: identifying them
+  by shift, avatar or call time counts
+- money taken without valid consent, including from someone who may not have
+  understood what they agreed to
+- someone outside support being brought in: a court, a lawyer, a regulator or
+  ombudsman, a bank reversing a payment, a journalist
+- customer data reaching someone who should not have it, or an account acting
+  without its owner
+
+Decide from the facts described. If the mail would need one of these words to
+be written down accurately, it belongs here even if the word never appears.
+This is deliberately wide: it moved H1 recall on described mails from 50% to
+90%, and cost 11 false escalations on data/eval_set.jsonl, which is the right
+side to be wrong on for a route whose whole job is handing work to a human.
